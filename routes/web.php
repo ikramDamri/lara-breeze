@@ -23,30 +23,12 @@ use App\Http\Livewire\Tarifs;
 Route::get('/', function () {
     return view('welcome');
 });
-/* Route::view('/','livewire.home'); */
-//auth route for both
-/* Route::group(['middleware' => ['auth']], function() {
-    Route::get('/dashboard', Dashboard::class)->name('dashboard');
-    //Route::view('/dashboard', 'livewire.dashboard')->name('dashboard');
-}); */
 
-//auth route for both
+
+//auth route for all users
 Route::group(['middleware' => ['auth']], function() {
-    //Route::get('/dashboard', Dashboard@index)->name('dashboard');
     Route::get('/dashboard', [Dashboard::class, 'index'])->name('dashboard');
 });
-
-// for users
-/* Route::group(['middleware' => ['auth', 'role:user']], function() {
-    Route::get('/dashboard/myprofile', 'App\Http\Livewire\Dashboard')->name('dashboard.myprofile');
-}); */
-
-// for blogwriters
-/* Route::group(['middleware' => ['auth', 'role:blogwritter']], function() {
-    Route::view('/postcreate', 'livewire.postcreate')->name('livewire.postcreate');
-    //('/dashboard/postcreate', Dashboard::class);
-});
- */
 
 
 
@@ -79,23 +61,5 @@ Route::group(['middleware' => ['auth']], function() {
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/result', Results::class)->name('livewire.results');
 });
-
-/* Route::group(['middleware' => ['auth', 'role:admin']], function() {
-    Route::view('/agriculteur', 'livewire.home')->name('livewire.agriculteurs');
-    //('/dashboard/postcreate', Dashboard::class);
-}); */
-
-
-/* Route::group(['middleware' => ['auth', 'role:admin']], function() {
-    Route::view('/parcelles','livewire.parcelles.home');
-    //('/dashboard/postcreate', Dashboard::class);
-}); */
-
-/* Route::get('/parcelles', Parcelles::class);
-
-Route::group(['middleware' => ['auth', 'role:admin']], function() {
-    Route::get('/parcelles/{agriculteur}', Parcelles::class)->name('parcelles'); */
-    //('/dashboard/postcreate', Dashboard::class);
-//});
 
 require __DIR__.'/auth.php';

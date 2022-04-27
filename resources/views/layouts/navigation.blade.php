@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-dark border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -19,7 +19,7 @@
 
                 @if (Auth::user()->hasRole('admin') or Auth::user()->hasRole('editor') or Auth::user()->hasRole('viewer'))
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('livewire.agriculteurs')" :active="request()->routeIs('livewire.agriculteurs')">
+                    <x-nav-link text-white :href="route('livewire.agriculteurs')" :active="request()->routeIs('livewire.agriculteurs')">
                         {{ __('Agriculteur') }}
                     </x-nav-link>
                 </div>
@@ -67,22 +67,6 @@
                 </div>
                 @endif
 
-
-               {{--  @if (Auth::user()->hasRole('viewer'))
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard.myprofile')" :active="request()->routeIs('dashboard.myprofile')">
-                        {{ __('My Profile') }}
-                    </x-nav-link>
-                </div>
-                @endif --}}
-                {{-- @if (Auth::user()->hasRole('editor'))
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard.postcreate')" :active="request()->routeIs('dashboard.postcreate')">
-                        {{ __('Create a new Blog Post') }}
-                    </x-nav-link>
-                </div>
-                @endif
- --}}
             </div>
 
             <!-- Settings Dropdown -->

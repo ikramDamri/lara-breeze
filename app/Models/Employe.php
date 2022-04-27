@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Employe extends Model
 {
     use HasFactory;
-
+    protected $primaryKey = 'Emp_Nss';
+    public $incrementing = false;
+    protected $keyType = 'string';
     protected $fillable = [
         'Emp_Nss',
         'Emp_Nom',
@@ -19,25 +21,4 @@ class Employe extends Model
     {
         return $this->hasMany(Employe::class);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    protected $primaryKey = 'Emp_Nss';
-    public $incrementing = false;
-    protected $keyType = 'string';
 }

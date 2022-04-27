@@ -4,7 +4,9 @@
             {{ __('Results') }}
         </h2>
     </x-slot>
-    <button wire:click="question1" class="btn btn-primary btn-sm">Show Arg</button>
+    <div class="modal-body row">
+        <div class="col-md-6">
+    <button wire:click="question1" class="btn btn-success btn-sm">Show Arg</button>
 
     @if (is_array($agriculteur) || is_object($agriculteur))
     @foreach($agriculteur as $value)
@@ -14,8 +16,9 @@
 
     @endforeach
     @endif
+    <br><br>
 
-    <button wire:click="question2" class="btn btn-primary btn-sm">Parcelle</button>
+    <button wire:click="question2" class="btn btn-success btn-sm">Parcelle</button>
 
     @if (is_array($parcelle) || is_object($parcelle))
     @foreach($parcelle as $value)
@@ -25,8 +28,8 @@
 
     @endforeach
     @endif
-
-    <button wire:click="question3" class="btn btn-primary btn-sm">ParcelleInfo</button>
+    <br><br>
+    <button wire:click="question3" class="btn btn-success btn-sm">ParcelleInfo</button>
 
     @if (is_array($parcelles) || is_object($parcelles))
     @foreach($parcelles as $value)
@@ -38,9 +41,9 @@
 
     @endforeach
     @endif
+    <br><br>
 
-
-    <button wire:click="question4" class="btn btn-primary btn-sm">ParcelleAgr</button>
+    <button wire:click="question4" class="btn btn-success btn-sm">ParcelleAgr</button>
 
     @if (is_array($parcelle3) || is_object($parcelle3))
     @foreach($parcelle3 as $value)
@@ -51,8 +54,8 @@
 
     @endforeach
     @endif
-
-    <button wire:click="question5" class="btn btn-primary btn-sm">Intervention</button>
+    <br><br>
+    <button wire:click="question5" class="btn btn-success btn-sm">Intervention</button>
 
     @if (is_array($intervention) || is_object($intervention))
     @foreach($intervention as $value)
@@ -63,7 +66,8 @@
     @endforeach
     @endif
 
-    <button wire:click="question6" class="btn btn-primary btn-sm">InterPar</button>
+    <br><br>
+    <button wire:click="question6" class="btn btn-success btn-sm">InterPar</button>
 
     @if (is_array($intervention2) || is_object($intervention2))
     @foreach($intervention2 as $value)
@@ -74,8 +78,9 @@
 
     @endforeach
     @endif
-
-    <button wire:click="question7" class="btn btn-primary btn-sm">InterParEmp</button>
+    </div>
+    <div class="col-md-6">
+    <button wire:click="question7" class="btn btn-success btn-sm marg">InterParEmp</button>
 
     @if (is_array($intervention3) || is_object($intervention3))
     @foreach($intervention3 as $value)
@@ -86,8 +91,8 @@
             </ul>
     @endforeach
     @endif
-
-    <button wire:click="question8" class="btn btn-primary btn-sm">InterEmp</button>
+    <br><br>
+    <button wire:click="question8" class="btn btn-success btn-sm">InterEmp</button>
 
     @if (is_array($intervention4) || is_object($intervention4))
     @foreach($intervention4 as $value)
@@ -98,16 +103,28 @@
 
     @endforeach
     @endif
-
-    <button wire:click="question9" class="btn btn-primary btn-sm">countpar</button>
+    <br><br>
+    <button wire:click="question9" class="btn btn-success btn-sm">countpar</button>
     <ul><li>{{$parcelle4}}</li></ul>
 
-
-    <button wire:click="question10" class="btn btn-primary btn-sm">maxPar</button>
+    <br>
+    <button wire:click="question10" class="btn btn-success btn-sm">maxPar</button>
     <ul><li>{{ $maximum}}</li></ul>
-
-    <button wire:click="question11" class="btn btn-primary btn-sm" data-toggle="collapse">minPar</button>
+    <br>
+    <button wire:click="question11" class="btn btn-success btn-sm" data-toggle="collapse">minPar</button>
     <ul><li>{{ $minimum}}</li></ul>
 
 
     </div>
+</div>
+</div>
+
+<style>
+    button {
+        width: 146px
+    }
+    .marg {
+        margin-top: 30px
+    }
+</style>
+
